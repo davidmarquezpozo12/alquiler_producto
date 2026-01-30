@@ -7,7 +7,7 @@
     'website': 'https://tuweb.com',
     'license': 'LGPL-3',
     'depends': ['base', 'product', 'sale'],
-    'icon': '/alquiler_producto/static/description/icon57.png',
+    'icon': '/alquiler_producto/static/description/icono.png',
     'data': [
         'data/alquiler_cron.xml',
         'views/alquiler_producto_views.xml',
