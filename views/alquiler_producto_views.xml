@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record id="view_alquiler_form" model="ir.ui.view">
+        <field name="name">alquiler.producto.form</field>
+        <field name="model">alquiler.producto</field>
+        <field name="arch" type="xml">
+            <form string="Alquiler de producto">
+                <sheet>
+                    <group>
+                        <field name="partner_id"/>
+                        <field name="product_id"/>
+                        <field name="fecha_inicio"/>
+                        <field name="fecha_fin" readonly="1"/>
+                        <field name="estado" readonly="1"/>
+                    </group>
+                    <group>
+                        <field name="observaciones"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_alquiler_tree" model="ir.ui.view">
+        <field name="name">alquiler.producto.tree</field>
+        <field name="model">alquiler.producto</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="partner_id"/>
+                <field name="product_id"/>
+                <field name="fecha_inicio"/>
+                <field name="fecha_fin"/>
+                <field name="estado"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_alquiler_producto" model="ir.actions.act_window">
+        <field name="name">Alquileres</field>
+        <field name="res_model">alquiler.producto</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    
+    <menuitem id="menu_alquiler_root"
+              name="Alquileres"
+              sequence="30"/>
+
+    <menuitem id="menu_alquiler_producto"
+              name="Gestión de alquileres"
+              parent="menu_alquiler_root"
+              action="action_alquiler_producto"/>
+</odoo>
